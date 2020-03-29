@@ -1,9 +1,3 @@
 steps:
-- name: 'gcr.io/cloud-builders/curl'
-  entrypoint: 'bash'
-  args:
-  - '-c'
-  - |
-    ./mvnw -DskipTests package
-    ./mvnw -DskipTests com.google.cloud.tools:jib-maven-plugin:build \
-      -Dimage=gcr.io/marcin-testing-271311/hello-java:v1
+  - name: "gcr.io/cloud-builders/mvn"
+    args: ["-D", "skipTests", "clean", "package", "appengine:deploy"]
