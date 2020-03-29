@@ -1,3 +1,3 @@
 steps:
-- name: 'script-runner'
+- name: 'gcr.io/cloud-builders/docker'
   args: ['bash', './build.sh']
